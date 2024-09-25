@@ -1,0 +1,62 @@
+*, *::after, *::before { box-sizing: border-box; }
+
+/* Declarado no root para que fique de forma global, para que seja aplicada em toda a página de acordo a necessidade. */
+/* Declaração de variáveis para paleta de cores */
+:root {
+    --cor-titulo: #4d4d4d;
+    --cor-texto: #333;
+    --cor-escura: #000;
+    --cor-clara: #fff;
+    --cor-intermediaria: #ececec;
+}
+
+/* Reset em alguns elementos usados neste projeto */
+body, h1, h2, p, figure, .links-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none; /*Removendo marcadores da lista ul */
+}
+
+/* Importante para uso da medida relativa REM */
+html { font-size: 16px; }
+
+/* Fontes que tem espaço deverão estar entre "" */
+body {
+    font-family: "Noto Sans", sans-serif;
+    color: var(--cor-texto);
+}
+
+img { max-width: 100%;}
+
+/* Links sem underline */
+a { text-decoration: none;}
+
+.titulo {
+    font-family: Raleway, sans-serif;
+
+    /* transformar a letra em maiusculo */
+    text-transform: uppercase;
+
+    /* Nível de negrito, algumas fontes dão essa opção no google fonts */
+    font-weight: 800;
+    font-size: 1.5rem;
+
+    /* Formatando o link dentro do h1 */
+    a {
+        background-color: var(--cor-escura);
+        color: var(--cor-clara);
+        padding: 0.3rem 1rem;
+        border-radius: 4px;
+    }
+}
+
+.topo {
+    background-color: yellow ;
+    
+    /*viewport height, deixa o espaço variável de acordo com a viewport */
+    height: 12vh; 
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
