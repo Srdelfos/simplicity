@@ -51,12 +51,104 @@ a { text-decoration: none;}
 }
 
 .topo {
-    background-color: yellow ;
+    /* background-color: yellow ; */ /* ver como irá se comportar */
     
     /*viewport height, deixa o espaço variável de acordo com a viewport */
     height: 12vh; 
+    /* height: 150px; provisório */
     
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* class + a, por se tratar de um link. Assim será configurado os dois */
+.titulo-menu a {
+    color: var(--cor-escura);
+    font-size: 1.2rem;
+    
+    /* background-color: aquamarine; */ /*ver como o .titulo-menu se comporta */
+
+    padding: 1rem;
+
+    /* Vai fazer com que o "menu" não sobreponha/invade as demais oções da lista */
+    display: inline-block;
+}
+
+/* poderia ser: 
+.titulo-menu a:hover
+.links-menu a:hover
+como existe a class menu no nav, já irá agrupar tudo, então usaremos: */
+.menu a:hover, .menu a:focus {
+    background-color: var(--cor-intermediaria);
+}
+
+/* Estilos para lista ul contida no menu nav */
+.links-menu {
+
+    /* Atenção! Neste ponto, fazemos com que os links do menu iniciem escondidos (display:none) em telas pequenas. Posteriormente, com a ajuda do CSS combinado com o JS, faremos os comandos necessários para exibir/esconder de forma alternada. */
+    display: none;
+
+    /* Formatação dos links */
+    a {
+        color: var(--cor-escura);
+        font-weight: bold;
+        /* background-color: yellow; */
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.links-menu.aberto {
+
+    /* Ativamos o flex para anular o display:none (fazendo os links aparecerem) e ao mesmo tempo ter os recursos do flex. */
+    display: flex;
+
+    /* Mudamos a direção para coluna para voltar a exibir um link em cima do outro. */
+    flex-direction: column;
+
+    /* Usamos o position e coordenadas para ajustara posição e o tamanho que os links ocuparam na tela logo abaixo da palavra Menu. */
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    background-color: var(--cor-clara);
+}
+
+/* Exercícios */
+
+/* 
+
+1) Crie uma regra específica para formatar o artigo "Destaque" com as seguintes configurações:
+
+- Altura de 88vh
+- Imagem de fundo (fundo-destaque)
+- Imagem de fundo deve ficar parada
+- Use o flex para alinhar totalmente no meio
+- Use o flex para garantir que os textos fiquem um em cima do outro
+
+2) Crie uma regra para formatar os "h2" e o "p" contidos no "Destaque". Faça com que os textos fiquem centralizados com a cor clada.
+
+*/
+
+.destaque {
+    height: 88vh;
+    background-image: url(/imagens/fundo-destaque.jpg);
+    /* background-repeat: no-repeat; */
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    /* Também pode ser feito assim: */
+    /* flex-wrap: wrap;
+    align-content: center; */
+
+    h2, p {
+        text-align: center;
+        color: var(--cor-clara);
+    }
 }
