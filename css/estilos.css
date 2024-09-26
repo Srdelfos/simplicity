@@ -135,20 +135,37 @@ como existe a class menu no nav, já irá agrupar tudo, então usaremos: */
 
 .destaque {
     height: 88vh;
-    background-image: url(/imagens/fundo-destaque.jpg);
+    background-image: url(../imagens/fundo-destaque.jpg);
+    background-attachment: fixed;
     /* background-repeat: no-repeat; */
-    position: static;
+
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     flex-direction: column;
     /* Também pode ser feito assim: */
     /* flex-wrap: wrap;
     align-content: center; */
 
+    background-size: cover;
+    
     h2, p {
         text-align: center;
         color: var(--cor-clara);
     }
+
+    h2 {font-size: clamp(3rem, 10vw, 7rem);}
+
+    p {font-size: clamp(1.5rem, 3vw, 3rem);}
 }
+/* Sobre a função clamp()
+Função útil para redimensionamento responsivo de acordo com critérios de tamanhos mínimo, ideal/variável/responsivo e máximo.  Uso mais comum é para textos responsivos, mas pode ser usado com qualquer propriedade que envolva tamanhos (width,height, etc).
+
+clamp(
+    tamanho mínimo,
+    tamanho ideal/variável/responsivo,
+    tamanho máximo
+)
+
+*/
