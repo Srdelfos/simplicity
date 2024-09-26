@@ -51,24 +51,30 @@ a { text-decoration: none;}
 }
 
 .topo {
-    /* background-color: yellow ; */ /* ver como irá se comportar */
+    position: sticky;
+    top: 0;    
+    background-color: var(--cor-clara);
     
-    /*viewport height, deixa o espaço variável de acordo com a viewport */
-    height: 12vh; 
-    /* height: 150px; provisório */
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* Classe .limitador específica para uso no cabeçalho/topo: além das configurações gerais (width e margin), AQUI ela também tem altura e ajustes do flex. */
+    .limitador{
+        height: 12vh;     
+        display: flex;
+        justify-content: space-between;
+        align-items: center;     
+    }
+}
+
+/* Classe .limitador de uso geral:
+Sempre terá largura de 95vw e margin auto não importando onde será aplicado. */
+.limitador {
+    width: 95vw;
+    margin: auto;
 }
 
 /* class + a, por se tratar de um link. Assim será configurado os dois */
 .titulo-menu a {
     color: var(--cor-escura);
     font-size: 1.2rem;
-    
-    /* background-color: aquamarine; */ /*ver como o .titulo-menu se comporta */
-
     padding: 1rem;
 
     /* Vai fazer com que o "menu" não sobreponha/invade as demais oções da lista */
@@ -209,6 +215,39 @@ article {
 }
 
 .front-end, .historia, .localizacao {
+    text-align: center;
+}
+
+.historia {
+    background-image:url(../imagens/fundo-madeira.jpg);
+    background-size: cover;
+    /* background-attachment: fixed; */
+
+    h2 {
+        color: var(--cor-clara);
+        text-shadow: 1px 0 0 red;
+    }
+
+    iframe {
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: 2rem;
+    }
+}
+
+.localizacao iframe {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.rodape {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    height: 30vh;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
