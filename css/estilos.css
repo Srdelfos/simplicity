@@ -51,6 +51,9 @@ a { text-decoration: none;}
 }
 
 .topo {
+    /* Necessário para garantir que o topo sempre fique por cima de qualquer elemento */
+    z-index: 10;
+    
     position: sticky;
     top: 0;    
     background-color: var(--cor-clara);
@@ -290,4 +293,24 @@ table {
     td:last-child, th:last-child {text-align: right;}
 
     tr:nth-child(odd) {background-color: var(--cor-clara);}
+}
+
+.galeria {
+    text-align: center;
+
+    img {
+        border-radius: 50%;
+        transform: scale(.8) rotate(-10deg);
+        box-shadow: var(--cor-escura) 0 0 30px;
+        transition: .5s;
+        /* .galeria img:hover (que está FORA):
+        .galeria img:hover {
+        transform: scale(1) rotate(0);
+        Poderia ter sido feito AQUI dentro da seguinte maneira: 
+        &hover { transform: scale(1) rotate(0); } */
+    }
+}
+
+.galeria img:hover {
+transform: scale(1) rotate(0);
 }
