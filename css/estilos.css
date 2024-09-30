@@ -314,3 +314,25 @@ table {
 .galeria img:hover {
 transform: scale(1) rotate(0);
 }
+
+/*  Media Queries: regras de uso condicional de acordo com o tamanho de tela necessário para ajustes no site */
+
+@media screen and (min-width:600px) {
+    /* Escondendo a palavra menu */
+    .titulo-menu {display: none;}
+
+    /* Exibimos os links (lista de links) */
+    .links-menu { 
+        display: flex;
+
+        /* Forçamos cada item da lista a ter largura total e, com isso, redistribuir os espaços/alinhamentos. */
+        li { width: 100%;}    
+    }
+    /* Ajustamos o tamanho do menu (nav) como um todo */
+    .menu { width: 60%}
+}
+
+@media screen and (min-width:1000px) {
+    html { font-size: 18px;}
+    .limitador { max-width: 1000px;}
+}
