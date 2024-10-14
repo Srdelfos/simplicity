@@ -197,6 +197,7 @@ input, select, textarea {
     padding: 6px;
     height: 40px;
     border-radius: 4px;
+    background-color: var(--cor-clara);
 }
 
 textarea { height: auto; }
@@ -208,7 +209,6 @@ button {
     padding: 10px;
     font-weight: bold;
     border-radius: 4px;
-    background-color: var(--cor-clara);
 }
 
 button:hover, button:focus {
