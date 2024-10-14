@@ -12,6 +12,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+        <!-- Importanto o CSS do plugin Lightbox -->
+        <link rel="stylesheet" href="lightbox/css/lightbox.min.css">
+
         <link rel="stylesheet" href="css/estilos.css"> 
     </head>
 <body>
@@ -51,13 +54,13 @@
             
             <figure class="galeria">
                 <!-- img dentro da tag "a" -->
-                <a href="imagens/desenvolvimento-web.jpg"><img src="imagens/desenvolvimento-web-mini.jpg" alt=""></a>
+                <a data-title="Imagem Desenvolvimento Web" data-lightbox="foto" href="imagens/desenvolvimento-web.jpg"><img src="imagens/desenvolvimento-web-mini.jpg" alt=""></a>
 
-                <a href="imagens/design-grafico.jpg"><img src="imagens/design-grafico-mini.jpg" alt=""></a>
+                <a data-title="Imagem Design Gráfico" data-lightbox="foto" href="imagens/design-grafico.jpg"><img src="imagens/design-grafico-mini.jpg" alt=""></a>
 
-                <a href="imagens/marketing-digital.jpg"><img src="imagens/marketing-digital-mini.jpg" alt=""></a>
+                <a data-title="Imagem Marketing Digital" data-lightbox="foto" href="imagens/marketing-digital.jpg"><img src="imagens/marketing-digital-mini.jpg" alt=""></a>
 
-                <a href="imagens/consultoria-treinamento.jpg"><img src="imagens/consultoria-treinamento-mini.jpg" alt=""></a>
+                <a data-title="Imagem Consultoria Treinamento" data-lightbox="foto" href="imagens/consultoria-treinamento.jpg"><img src="imagens/consultoria-treinamento-mini.jpg" alt=""></a>
 
             </figure>
             
@@ -78,7 +81,21 @@
     <footer class="rodape">
         <p>Simplicity é um site fictício desenvolvido para fins educacionais &copy; <time>2024</time></p>
     </footer>
+
+    <!-- Importação da biblioteca JQuery (sempre primeiro) -->
+    <script src="js/jquery-3.7.1.min.js"></script>
     
+    <!-- Importação do JS do plugin Lightbox -->
+    <script src="lightbox/js/lightbox.min.js"></script>
+
+    <script>
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          albumLabel: "Imagem %1 de %2"
+        })
+    </script>
+
     <script src="js/menu.js"></script>
 </body>
 </html>
